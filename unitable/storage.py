@@ -7,9 +7,9 @@ Copyright (C) 2005-2008  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.
@@ -28,10 +28,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
 import os
 import sys
 import csv
-from augustus.external import numpy as na
-from augustus.external.numpy import char as nastr
-from augustus.external.numpy import rec as narec
-from augustus.external.numpy import ma as ma
+import numpy as na
+from numpy import char as nastr
+from numpy import rec as narec
+from numpy import ma as ma
 import itertools as it
 from cStringIO import StringIO
 
@@ -590,7 +590,7 @@ class TableMethods(object):
   def _to_html_elementtree(self,tblattr=None,method=str):
     if tblattr is None:
       tblattr = {'border':'1'}
-    from augustus.external.etree import Element, SubElement, ElementTree
+    from xml.etree.ElementTree import Element, SubElement, ElementTree
     out = Element('table',**tblattr)
     out.text = out.tail = '\n'
     headings = SubElement(out,'tr')
@@ -633,7 +633,7 @@ class TableMethods(object):
       'row_element':  'row',
     }
     cfg.update(kwargs)
-    from augustus.external.etree import Element, SubElement, ElementTree
+    from xml.etree.ElementTree import Element, SubElement, ElementTree
     out = Element(cfg['tbl_element'])
     out.text = out.tail = '\n'
     values = [export_string(value) for value in self.values()]
@@ -735,7 +735,7 @@ class SymbolIndex(object):
     self.data = data = {'':0}  # try to pre-assign empty string value
     self.filename = filename
     if filename and os.path.exists(filename):
-      from augustus.kernel.unitable import UniTable
+      from unitable import UniTable
       tbl = UniTable().fromfile(filename)
       for i,value in it.izip(tbl['index'],tbl['data']):
         data[value] = i
@@ -743,7 +743,7 @@ class SymbolIndex(object):
 
   def flush(self):
     if self.filename and len(self.data) > 1:
-      from augustus.kernel.unitable import UniTable
+      from unitable import UniTable
       tbl = UniTable(keys=['index','data'])
       tmp = self.data.items()
       tbl['index'] = [x[1] for x in tmp]

@@ -65,7 +65,7 @@
 
   Rules may call external vector functions.
 
-  >>> from augustus.external import pygsl
+  >>> import pygsl
   >>> rules.add_rule('e=gaussian_pdf(a,5)',gaussian_pdf=pygsl.rng.gaussian_pdf)
   >>> print x['e']
   [ 0.07365403  0.04839414  0.01579003  0.04839414]
@@ -115,9 +115,9 @@ Copyright (C) 2005-2007  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.
@@ -255,7 +255,7 @@ class EvalTable(UniTable):
 #################################################################
 
 if __name__ == "__main__":
-  from augustus.external import pygsl  # needed for this doctest
+  import pygsl  # needed for this doctest
   import doctest
   flags =  doctest.NORMALIZE_WHITESPACE
   flags |= doctest.ELLIPSIS

@@ -44,9 +44,9 @@ Copyright (C) 2005-2007  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.
@@ -71,7 +71,7 @@ __all__ = (
 ########################################################################
 # contain all references to underlying implementation
 
-from augustus.external import numpy
+import numpy
 
 as_num_array = numpy.asarray
 as_char_array = numpy.chararray

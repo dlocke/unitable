@@ -1,10 +1,9 @@
 """
-The "UniTable" is an implementation of a conceptual "Universal Table"
-that is at the core of the Augustus scoring engine.  The data
-structure is analogous to an R frame: a table where the columns are
-vectors of equal length, but may be of different types.  It is based
-on the Python numpy package and the programming interface attempts
-to maintain consistency with the style established therein.
+The "UniTable" is an implementation of a conceptual "Universal Table".
+The data structure is analogous to an R frame: a table where the
+columns are vectors of equal length, but may be of different types.
+It is based on the Python numpy package and the programming interface
+attempts to maintain consistency with the style established therein.
 
 The design goal was to create a very fast, efficient object for data
 shaping, model building, and scoring, both in a batch and real-time
@@ -66,7 +65,7 @@ context.  The key features are:
    See unitable.py for instructions
    and a large list of examples.  Typical usage is:
 
-     from augustus.unitable import UniTable
+     from unitable import UniTable
      tbl = UniTable
      tbl.fromfile(filename)
 
@@ -86,10 +85,11 @@ __copyright__ = """
 Copyright (C) 2005-2007  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
+Copyright (C) 2016 David Locke
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.

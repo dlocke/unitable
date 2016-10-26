@@ -17,9 +17,9 @@ Copyright (C) 2005-2007  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.
@@ -43,7 +43,7 @@ import itertools as it
 
 from asarray import get_format, get_bestfit, count_masked
 from unitable import UniTable
-import augustus.const as AUGUSTUS_CONSTS
+import const as UNITABLE_CONST
 
 
 import logging
@@ -677,7 +677,7 @@ def main():
   from optparse import OptionParser, make_option
 
   usage = 'usage: %prog [options] [datafile]'
-  version = "%prog " + AUGUSTUS_CONSTS._AUGUSTUS_VER
+  version = "%prog " + UNITABLE_CONST._UNITABLE_VER
   option_list = [
     make_option('-v','--verbose',action='count',default=1,help="make progress output more verbose"),
     make_option('-q','--quiet',action='store_false',dest='verbose',help="no progress messages"),

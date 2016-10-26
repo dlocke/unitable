@@ -9,18 +9,18 @@ short or long vectors, and other considerations.
 
 Typical use:
 
-  from augustus.kernel.unitable.veclib import veclib as vec
+  from unitable.veclib import veclib as vec
   # vec now contains default function choices
   vec.asarray(...)   # includes numarray namespace
   vec.chgdetect(...) # and local functions
 
 Future use (these names will likely change):
 
-  from augustus.kernel.unitable.veclib import MakeLib, Platform
+  from unitable.veclib import MakeLib, Platform
   platform = Platform(ramsize='3G')   # choose constraints and policy
   vec = MakeLib(platform)             # get custom veclib namespace
 
-  from augustus.kernel.unitable.veclib import Tester
+  from unitable.veclib import Tester
   tester = Tester(vec)
   tester.selftest()
   tester.list_functions()
@@ -34,9 +34,9 @@ Copyright (C) 2005-2007  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.

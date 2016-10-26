@@ -3,9 +3,9 @@ Copyright (C) 2005-2007  Open Data ("Open Data" refers to
 one or more of the following companies: Open Data Partners LLC,
 Open Data Research LLC, or Open Data Capital LLC.)
 
-This file is part of Augustus.
+This file was originally part of Augustus.
 
-Augustus is free software; you can redistribute it and/or
+UniTable is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
 of the License, or (at your option) any later version.
@@ -25,10 +25,10 @@ import sys
 import time
 import inspect
 import itertools as it
-from augustus.kernel.unitable import UniTable
-import augustus.external.numpy
-getnan = lambda x: augustus.external.numpy.nonzero(augustus.external.numpy.isnan(x))
-import augustus.const as AUGUSTUS_CONSTS
+from unitable import UniTable
+import numpy
+getnan = lambda x: numpy.nonzero(numpy.isnan(x))
+import const as UNITABLE_CONST
 from corelib import corelib
 as_any_array = corelib.as_any_array
 narand = corelib.random
@@ -353,7 +353,7 @@ def testmod():
   """
   from optparse import OptionParser, make_option
   usage = 'usage: %prog [options] [methods]'
-  version = "%prog " + AUGUSTUS_CONSTS._AUGUSTUS_VER
+  version = "%prog " + UNITABLE_CONST._UNITABLE_VER
   option_list = [
     make_option('-i','--itermode',action='store_true',help="show intermediate benchmark tables"),
   ]
